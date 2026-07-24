@@ -22,7 +22,7 @@ const SUGGESTIONS = [
   "How's my portfolio doing?",
   "What's RELIANCE trading at?",
   "Chart RELIANCE",
-  "Order vada pav in Dadar",
+  "Explore food options for home",
 ];
 
 function timeNow(): string {
