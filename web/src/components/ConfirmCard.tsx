@@ -1,4 +1,5 @@
 import type { ChatEvent } from "../types";
+import { CheckIcon, FoodIcon, TrendingIcon, XIcon } from "../icons";
 
 type ToolUseEvent = Extract<ChatEvent, { type: "agent.tool_use" }>;
 
@@ -11,16 +12,22 @@ export function ConfirmCard({
   onDecide: (decision: "allow" | "deny") => void;
   busy: boolean;
 }) {
+  const isSwiggy = event.server === "swiggy";
   return (
     <div className="card">
-      <span className="label">{event.server} · needs your confirmation</span>
-      <div>{event.summary}</div>
+      <div className="card-head">
+        <div className={`card-icon ${isSwiggy ? "swiggy" : "kite"}`}>
+          {isSwiggy ? <FoodIcon size={14} /> : <TrendingIcon size={14} />}
+        </div>
+        <span className="label">{isSwiggy ? "Swiggy" : "Kite"} · needs confirmation</span>
+      </div>
+      <div className="body">{event.summary}</div>
       <div className="actions">
         <button className="confirm" disabled={busy} onClick={() => onDecide("allow")}>
-          Confirm
+          <CheckIcon size={14} /> Confirm
         </button>
         <button className="deny" disabled={busy} onClick={() => onDecide("deny")}>
-          Deny
+          <XIcon size={14} /> Deny
         </button>
       </div>
     </div>

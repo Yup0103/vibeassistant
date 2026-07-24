@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { login } from "../api";
+import { SparkleIcon } from "../icons";
 
 export function Login({ onLoggedIn }: { onLoggedIn: (email: string) => void }) {
   const [email, setEmail] = useState("");
@@ -24,7 +25,13 @@ export function Login({ onLoggedIn }: { onLoggedIn: (email: string) => void }) {
   return (
     <div className="login-screen">
       <form className="login-card" onSubmit={handleSubmit}>
-        <h1>Personal Assistant</h1>
+        <div className="app-avatar">
+          <SparkleIcon size={22} />
+        </div>
+        <div>
+          <h1>Personal Assistant</h1>
+          <p className="lede">Your portfolio and food ordering, in one conversation.</p>
+        </div>
         <input
           type="email"
           placeholder="Email"

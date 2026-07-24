@@ -19,6 +19,13 @@ export type ChatEvent =
       summary: string;
     }
   | { type: "agent.tool_result"; toolUseId: string; summary: string }
+  | {
+      type: "agent.chart";
+      title: string;
+      unit: "inr" | "pct";
+      points: { label: string; value: number }[];
+      changePct: number;
+    }
   | { type: "kite.login_required"; loginUrl: string }
   | { type: "session.idle" }
   | { type: "session.error"; message: string };

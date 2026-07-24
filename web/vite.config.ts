@@ -12,8 +12,8 @@ export default defineConfig({
         name: "Personal Life Assistant",
         short_name: "Assistant",
         description: "Personal MCP-connected assistant — portfolio + food ordering",
-        theme_color: "#234064",
-        background_color: "#F3F5F8",
+        theme_color: "#FF6B45",
+        background_color: "#FDF8F5",
         display: "standalone",
         start_url: "/",
         icons: [

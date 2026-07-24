@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: mcp-life-assistant
+    runtime: node
+    plan: free
+    buildCommand: cd web && npm ci && npm run build && cd ../server && npm ci && npm run build
+    startCommand: cd server && npm start
+    healthCheckPath: /health
+    envVars:
+      - key: MOCK_MODE
+        value: "true"
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: APP_USER_EMAIL
+        sync: false
+      - key: APP_USER_PASSWORD_HASH
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: DB_PATH
+        value: ./data.sqlite
+      - key: KITE_MCP_URL
+        value: https://mcp.kite.trade/mcp

@@ -1,7 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
-  <rect width="192" height="192" rx="36" fill="#234064"/>
-  <path d="M46 60a18 18 0 0 1 18-18h64a18 18 0 0 1 18 18v46a18 18 0 0 1-18 18H92l-24 22v-22H64a18 18 0 0 1-18-18Z" fill="#F3F5F8"/>
-  <circle cx="76" cy="83" r="6" fill="#234064"/>
-  <circle cx="96" cy="83" r="6" fill="#234064"/>
-  <circle cx="116" cy="83" r="6" fill="#234064"/>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF6B45"/>
+      <stop offset="1" stop-color="#FF8F66"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="48" fill="url(#g)"/>
+  <path d="M96 46l9.9 31.8L138 88l-32.1 10.2L96 130l-9.9-31.8L54 88l32.1-10.2Z" fill="#3A2434"/>
+  <circle cx="96" cy="88" r="7" fill="#FDF8F5"/>
 </svg>

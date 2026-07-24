@@ -1,4 +1,5 @@
 import { kiteMockLoginComplete } from "../api";
+import { TrendingIcon } from "../icons";
 
 export function KiteLoginPrompt({
   loginUrl,
@@ -19,9 +20,14 @@ export function KiteLoginPrompt({
   }
 
   return (
-    <div className="card kite-card">
-      <span className="label">Kite · daily login</span>
-      <div>Your Zerodha session isn't authenticated yet — this happens once a day.</div>
+    <div className="card">
+      <div className="card-head">
+        <div className="card-icon kite">
+          <TrendingIcon size={14} />
+        </div>
+        <span className="label">Kite · daily login</span>
+      </div>
+      <div className="body">Your Zerodha session isn't authenticated yet — this happens once a day.</div>
       <a
         className="login-link"
         href={loginUrl}
